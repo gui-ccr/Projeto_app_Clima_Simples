@@ -58,7 +58,7 @@ Este projeto foi uma oportunidade para aplicar na prática os conceitos essencia
 2.  **Crie um arquivo para sua chave de API:**
     * Dentro do seu projeto, localize o arquivo `lib/pagina_contador.dart` (ou o nome que você deu para sua tela de clima).
     * Encontre a linha `String apiKey = 'SUA_CHAVE_DE_API_VEM_AQUI';`
-    * Substitua `'SUA_CHAVE_DE_API_VEM_AQUI'` pela sua chave real da OpenWeatherMap.
+    * Substitua a API pela sua chave real da OpenWeatherMap.
 
 3.  **Instale as dependências:**
     ```bash
