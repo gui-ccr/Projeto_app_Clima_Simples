@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http; // Para usar o pacote http
 import 'dart:convert'; // Para decodificar a resposta JSON
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future<void> main() async{
+   // Carrega as variaveis do arquivo .env para a memoria
+  await dotenv.load(fileName: ".env");
   runApp(const MeuAppClima());
 }
 
@@ -32,7 +35,7 @@ class _MeuAppClimaState extends State<MeuAppClima> {
   void _buscarClima() async {
     if (_controllerCidade.text.isNotEmpty) {
       // --- ATENCAO: COLOQUE SUA CHAVE DE API AQUI ---
-      String apiKey = '70bf56766d0568caa912a8950abbde69';
+      String apiKey = dotenv.env['OPENWEATHER_API_KEY']!;
       String cidade = _controllerCidade.text;
 
       // 1. Montamos a URL completa para a API
